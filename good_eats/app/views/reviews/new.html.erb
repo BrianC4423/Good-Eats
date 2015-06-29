@@ -1,0 +1,22 @@
+<h1>Add A Review</h1>
+
+<%= form_for([@restaurant, @restaurant.reviews.build]) do |f| %>
+
+<div>
+  <%= f.label :rating %>
+  <%= f.select :rating, ['✭','✭✭','✭✭✭','✭✭✭✭','✭✭✭✭✭'] %>
+</div>
+<br>
+
+<div>
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+</div>
+<br>
+
+
+<%= f.submit 'Submit' %>
+<% end %>
+<br>
+
+<%= link_to "Back to Restaurants", restaurant_path(@restaurant, @review), :class => "button"  %>

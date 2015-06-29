@@ -1,0 +1,28 @@
+<h3><%= @restaurant.name %></h3>
+
+<ul>
+  <li>Address: <%= @restaurant.address %></li>
+  <li>City: <%= @restaurant.city %></li>
+  <li>State: <%= @restaurant.state %></li>
+  <li>ZipCode: <%= @restaurant.zip_code %></li>
+  <li>Description: <%= @restaurant.description %></li>
+  <li>Category: <%= @restaurant.category %></li>
+</ul>
+
+<%= link_to "Add a Review", new_restaurant_review_path(@restaurant, @review), :class => "button"  %>
+
+<h3>Customer Reviews</h3>
+
+<ul>
+
+<% @reviews.each do |review| %>
+<li>Created: <%= review.created_at %></li>
+<li>Rating: <%= review.rating %></li>
+<li>Review: <%= review.body %></li>
+<br>
+
+<% end %>
+
+</ul>
+
+<%= link_to 'Back', restaurants_path %>

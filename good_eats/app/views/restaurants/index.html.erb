@@ -1,0 +1,9 @@
+<h1>Restaurants</h1>
+
+<ul>
+  <% @restaurants.each do |restaurant| %>
+      <li><%= link_to restaurant.name, restaurant_path(restaurant) %>, <%= "#{restaurant.city} (#{restaurant.state})" %></li>
+  <% end %>
+  </ul>
+
+  <%= link_to "Add Restaurant", new_restaurant_path, :class => "button"  %>
